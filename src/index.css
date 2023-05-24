@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
 /*
 --------------
 Global Styles
 -------------- */
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 /*
@@ -15,9 +16,9 @@ html, body {
 App Container
 -------------- */
 .App {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* 
@@ -25,8 +26,8 @@ App Container
 App Main Container
 -------------- 
 */
-.main-container{
-    display: flex;
+.main-container {
+  display: flex;
 }
 
 /* 
@@ -35,7 +36,7 @@ app content container
 -------------- 
 */
 .main-content {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 /* 
@@ -44,44 +45,126 @@ Navbar
 --------------
  */
 .navbar {
-    height: 50px;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.4);
-    position: sticky;
-    top: 0;
-    background-color: white;
+  height: 50px;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 .form {
-    width: 200px;
+  width: 200px;
 }
-.input{
-    width: 100%;
-    line-height: 25px;
-    border-radius: 15px;
-    border-color: hsla(0, 0%, 53.3%, 0.2);
+.input {
+  width: 100%;
+  line-height: 25px;
+  border-radius: 15px;
+  border-color: hsla(0, 0%, 53.3%, 0.2);
 }
-input::placeholder{
-    padding: 10px;
-    color: rgb(87, 85, 85);
+input::placeholder {
+  padding: 10px;
+  color: rgb(87, 85, 85);
 }
 
-a {
-    color: rgb(87, 85, 85);
-    text-decoration: none;
-}
+/* a {
+  color: rgb(87, 85, 85);
+  text-decoration: none;
+} */
+
+/* a.categoryLink {
+  color: rgb(87, 85, 85);
+} */
+
+/* a.active-link {
+  color: rgb(204, 0, 0);
+  background-color: #fffefe;
+} */
 
 /* 
 --------------
 Sidebar
 --------------
- */
- .sidebar {
-    width: 200px;
-    border-right: 2px solid hsla(0, 1%, 26%, 0.2);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
- }
+*/
+
+.sidebar {
+  width: 200px;
+  border-right: 2px solid rgb(226, 221, 221);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  overflow: hidden;
+  padding: 1rem;
+  align-items: center;
+}
+.middle-sidebar {
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 100%;
+}
+.category-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.category-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+}
+
+.category-list li svg {
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+.top-sidebar {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgb(226, 221, 221);
+  align-items: center;
+}
+.category {
+  color: rgb(204, 0, 0);
+  font-size: 1rem;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: rgb(144, 144, 144);
+}
+a.active {
+  color: rgb(204, 0, 0);
+  background-color: #fffefe;
+}
+
+.bottom-sidebar {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  color: rgb(96, 96, 96);
+  cursor: pointer;
+  margin-right: 10px;
+}
+.icon:hover {
+  color: rgb(13, 13, 13);
+}
+
+.settings {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
