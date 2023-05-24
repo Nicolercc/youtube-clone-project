@@ -13,7 +13,7 @@ As a user I can:
 
 ---
 > This project is a collaboration of [Amina M.](https://github.com/Amina-Moufakkir) and [Nicole R.](https://github.com/Nicolercc)
----
+
 ## Installation
 
 Please see the appropriate guide for your environment of choice:
@@ -21,3 +21,7 @@ Please see the appropriate guide for your environment of choice:
 1. Clone your repository
 2. Navigate to your project directory
 3. Install dependecies: ```npm install```
+
+---
+> Trello: https://trello.com/b/KHYh2e5X/youtube-clone-app
+---
