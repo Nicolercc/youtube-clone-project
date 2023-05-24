@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+/*
+--------------
+Global Styles
+-------------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*
+--------------
+App Container
+-------------- */
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 
+--------------
+App Main Container
+-------------- 
+*/
+.main-container{
+    display: flex;
+}
+
+/* 
+--------------
+app content container
+-------------- 
+*/
+.main-content {
+    margin-left: 20px;
+}
+
+/* 
+--------------
+Navbar
+--------------
+ */
+.navbar {
+    height: 50px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+.form {
+    width: 200px;
+}
+.input{
+    width: 100%;
+    line-height: 25px;
+    border-radius: 15px;
+    border-color: hsla(0, 0%, 53.3%, 0.2);
+}
+input::placeholder{
+    padding: 10px;
+    color: rgb(87, 85, 85);
+}
+
+a {
+    color: rgb(87, 85, 85);
+    text-decoration: none;
+}
+
+/* 
+--------------
+Sidebar
+--------------
+ */
+ .sidebar {
+    width: 200px;
+    border-right: 2px solid hsla(0, 1%, 26%, 0.2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+ }
