@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+
 import axios from 'axios';
 import {
   NavBar,
@@ -10,6 +10,8 @@ import {
   VideoSearch,
   Error,
 } from './Components';
+
+import './index.css';
 
 const KEY = process.env.REACT_APP_API_KEY;
 const URL = `https://youtube.googleapis.com/youtube/v3/`;
