@@ -1,7 +1,7 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { VideoList } from '.';
-import { getData } from '../yt-fetch';
+import React from "react";
+import { useState, useEffect } from "react";
+import { VideoList } from ".";
+import { getData } from "../yt-fetch";
 
 function Home() {
   const [videos, setVideos] = useState([]);
@@ -12,7 +12,9 @@ function Home() {
         const data = await getData();
         console.log(data);
         setVideos(data);
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
     };
     fetchApiData();
   }, []);

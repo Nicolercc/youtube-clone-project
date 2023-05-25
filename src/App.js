@@ -1,16 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
   NavBar,
   SideBar,
   Home,
   VideoDetails,
-  VideoList,
-  VideoSearch,
+  SearchResults,
   Error,
-} from './Components';
-import './index.css';
-
+} from "./Components";
+import "./index.css";
 
 function App() {
   return (
@@ -22,9 +20,12 @@ function App() {
           <div className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/search" element={<VideoSearch />} />
-              <Route path="/list" element={<VideoList />} />
-              <Route path="/details/:id" element={<VideoDetails />} />
+              <Route path="/search/input" element={<SearchResults />} />
+              <Route path="/video/:videoId" element={<VideoDetails />} />
+              {/* <Route
+                path="/category/:categoryId"
+                element={<CategoryFilter />}
+              /> */}
               <Route path="*" element={<Error />} />
             </Routes>
           </div>
