@@ -1,6 +1,5 @@
 import React from "react";
-import { MdOutlineCategory } from "react-icons/md";
-
+import { AiOutlineSetting } from "react-icons/ai";
 import { categoryIcons } from "../utils";
 import { NavLink } from "react-router-dom";
 
