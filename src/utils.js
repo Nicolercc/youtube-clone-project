@@ -11,3 +11,5 @@ export const categoryIcons = {
   Sports: <MdSportsGymnastics />,
   Shorts: <MdAppShortcut />,
 };
+
+console.log(categoryIcons);
