@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react';
+import { VideoCard } from '.';
 
-function VideosList() {
-  return <div>VideosList</div>;
+function VideosList({ videos }) {
+  return (
+    <div className="videoList">
+      {videos.length > 0 &&
+        videos.map((video) => <VideoCard video={video} key={video.id} />)}
+    </div>
+  );
 }
 
 export default VideosList;

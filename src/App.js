@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import axios from "axios";
 import {
   NavBar,
   SideBar,
@@ -9,26 +8,11 @@ import {
   VideoList,
   VideoSearch,
   Error,
-} from "./Components";
+} from './Components';
 
-import "./index.css";
-
-const KEY = process.env.REACT_APP_API_KEY;
-const URL = `https://youtube.googleapis.com/youtube/v3/`;
+import './index.css';
 
 function App() {
-  async function getData() {
-    try {
-      const res = await axios.get(
-        `${URL}videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=US&key=${KEY}`
-      );
-      console.log(res.data.items);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  getData();
-
   return (
     <Router>
       <div className="App">
