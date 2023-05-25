@@ -1,7 +1,7 @@
-import React from "react";
-import { AiOutlineSetting } from "react-icons/ai";
-import { categoryIcons } from "../utils";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { AiOutlineSetting } from 'react-icons/ai';
+import { categoryIcons } from '../utils';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
@@ -16,7 +16,7 @@ const Sidebar = () => {
               <NavLink
                 to={`/category/${category}`}
                 style={(isActive) => ({
-                  className: isActive ? "active " : "navlink",
+                  className: isActive ? 'active ' : 'navlink',
                 })}
               >
                 {icon} {category}
