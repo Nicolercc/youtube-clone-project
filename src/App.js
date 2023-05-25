@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import {
   NavBar,
@@ -8,9 +8,9 @@ import {
   VideoList,
   VideoSearch,
   Error,
-} from "./Components";
+} from './Components';
+import './index.css';
 
-import "./index.css";
 
 function App() {
   return (
