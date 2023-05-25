@@ -95,13 +95,13 @@ Sidebar
   display: flex;
   flex-direction: column;
   height: calc(100vh - 50px);
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 1rem;
   align-items: center;
 }
 .middle-sidebar {
   flex-grow: 1;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   width: 100%;
 }
 .category-list {
