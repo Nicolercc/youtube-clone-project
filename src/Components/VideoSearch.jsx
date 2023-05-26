@@ -1,19 +1,19 @@
-import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { BiSearchAlt2 } from "react-icons/bi";
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { BiSearchAlt2 } from 'react-icons/bi';
 
 function VideoSearch() {
-  const [videoSearch, setVideoSearch] = useState("");
+  const [input, setInput] = useState('');
   const navigate = useNavigate();
 
   function handleChange(e) {
-    setVideoSearch(e.target.value);
+    setInput(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    navigate(`/search/${videoSearch}`);
+    navigate(`/search/${input}`);
   }
 
   return (
@@ -23,7 +23,7 @@ function VideoSearch() {
           type="text"
           placeholder="Search..."
           className="input"
-          value={videoSearch}
+          value={input}
           onChange={handleChange}
         />
         <button type="submit">

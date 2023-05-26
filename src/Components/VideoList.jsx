@@ -5,7 +5,9 @@ function VideosList({ videos }) {
   return (
     <div className="videoList">
       {videos.length > 0 &&
-        videos.map((video) => <VideoCard video={video} key={video.id} />)}
+        videos.map((video) => (
+          <VideoCard video={video} key={video.id.videoId} />
+        ))}
     </div>
   );
 }
