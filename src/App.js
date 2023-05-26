@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import {
   NavBar,
@@ -7,8 +7,8 @@ import {
   VideoDetails,
   SearchResults,
   Error,
-} from "./Components";
-import "./index.css";
+} from './Components';
+import './index.css';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <div className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/search/input" element={<SearchResults />} />
+              <Route path="/search/:input" element={<SearchResults />} />
               <Route path="/video/:videoId" element={<VideoDetails />} />
               {/* <Route
                 path="/category/:categoryId"

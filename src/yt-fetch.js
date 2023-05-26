@@ -14,4 +14,15 @@ async function getData() {
   }
 }
 
-export { getData };
+async function getUserData(input) {
+  try {
+    const res = await axios.get(
+      `${URL}search?part=snippet&maxResults=20&q=${input}&key=${KEY}`
+    );
+    return res.data.items; // this will return an array of objects containing the results for the search input
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export { getData, getUserData };
