@@ -32,11 +32,8 @@ const SearchResults = () => {
       {searchVideos.length > 0 &&
         searchVideos.map(
           (video) =>
-            video.id.videoId && (
-              <div
-                onClick={() => handleVideoClick(video.id.videoId)}
-                key={video.etag}
-              >
+            video.id && (
+              <div onClick={() => handleVideoClick(video.id)} key={video.etag}>
                 <VideoCard video={video} key={video.etag} />
               </div>
             )
