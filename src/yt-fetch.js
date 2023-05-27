@@ -3,7 +3,7 @@ import axios from 'axios';
 const KEY = process.env.REACT_APP_API_KEY;
 const URL = `https://youtube.googleapis.com/youtube/v3/`;
 
-async function getData() {
+async function fetchMostPopular() {
   try {
     const res = await axios.get(
       `${URL}videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=US&key=${KEY}`
@@ -14,7 +14,7 @@ async function getData() {
   }
 }
 
-async function getUserData(input) {
+async function fetchUserSearch(input) {
   try {
     const res = await axios.get(
       `${URL}search?part=snippet&maxResults=20&q=${input}&key=${KEY}`
@@ -25,15 +25,17 @@ async function getUserData(input) {
   }
 }
 
-async function getVideoId(id) {
+async function fetchVideoByID(id) {
   try {
     const res = await axios.get(
       `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${KEY}`
     );
+    console.log(res.data.items[0]);
     return res.data.items[0];
   } catch (e) {
     console.log(e);
+    throw e;
   }
 }
 
-export { getData, getUserData, getVideoId };
+export { fetchMostPopular, fetchUserSearch, fetchVideoByID };

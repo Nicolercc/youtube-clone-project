@@ -37,6 +37,7 @@ app content container
 */
 .main-content {
   margin-left: 20px;
+  display: flex;
 }
 
 /* 
