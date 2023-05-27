@@ -14,6 +14,7 @@ function VideoSearch() {
   function handleSubmit(e) {
     e.preventDefault();
     navigate(`/search/${input}`);
+    setInput('');
   }
 
   return (

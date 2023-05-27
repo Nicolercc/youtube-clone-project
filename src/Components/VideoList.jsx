@@ -1,15 +1,13 @@
 import React from 'react';
 import { VideoCard } from '.';
 
-function VideosList({ videos }) {
+function VideoList({ videos }) {
   return (
     <div className="videoList">
       {videos.length > 0 &&
-        videos.map((video) => (
-          <VideoCard video={video} key={video.id.videoId} />
-        ))}
+        videos.map((video) => <VideoCard video={video} key={video.etag} />)}
     </div>
   );
 }
 
-export default VideosList;
+export default VideoList;
