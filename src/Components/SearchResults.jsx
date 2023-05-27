@@ -10,7 +10,7 @@ const SearchResults = () => {
   const { input } = useParams();
 
   useEffect(() => {
-    const fetchApiInput = async () => {
+    const fetchVideoId = async () => {
       try {
         const data = await getUserData(input);
         console.log(data);
@@ -19,7 +19,7 @@ const SearchResults = () => {
         console.log(e);
       }
     };
-    fetchApiInput();
+    fetchVideoId();
   }, [input]);
 
   return (
