@@ -1,5 +1,4 @@
 import React from 'react';
-import { AiOutlineSetting } from 'react-icons/ai';
 import { categoryIcons } from '../utils';
 import { NavLink } from 'react-router-dom';
 
@@ -7,7 +6,10 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top-sidebar">
-        <span className="category">Categories</span>
+        <NavLink to="/">
+          <span className="material-icons home-icon">home</span>
+          <p>Home</p>
+        </NavLink>
       </div>
       <div className="middle-sidebar">
         <ul className="category-list">
@@ -26,16 +28,14 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom-sidebar">
-        <div className="settings">
+        {/* <div className="settings">
           <AiOutlineSetting className="icon" />
-
-          <span>Settings</span>
+          <span className="theme">Settings</span>
         </div>
-        <p>
-          &copy; {new Date().getFullYear()}
-          <span>Youtube</span>
-        </p>
-        <p>All rights reserved</p>
+        <div className="info-footer">
+          <span className="copy">{new Date().getFullYear()} Ytube</span>
+          <h6>&copy; Copyright</h6>
+        </div> */}
       </div>
     </div>
   );
