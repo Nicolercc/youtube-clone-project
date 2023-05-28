@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BiSearchAlt2 } from 'react-icons/bi';
 
 function VideoSearch() {
   const [input, setInput] = useState('');
@@ -18,8 +17,8 @@ function VideoSearch() {
   }
 
   return (
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
+    <>
+      <form className="navbar search-box" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Search..."
@@ -27,11 +26,9 @@ function VideoSearch() {
           value={input}
           onChange={handleChange}
         />
-        <button type="submit">
-          <BiSearchAlt2 />
-        </button>
+        <span className="material-icons search-icon">search</span>
       </form>
-    </div>
+    </>
   );
 }
 

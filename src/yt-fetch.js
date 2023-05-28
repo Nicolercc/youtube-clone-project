@@ -34,7 +34,6 @@ async function fetchVideoByID(id) {
     return res.data.items[0];
   } catch (e) {
     console.log(e);
-    throw e;
   }
 }
 

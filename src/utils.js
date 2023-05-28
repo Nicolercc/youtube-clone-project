@@ -5,8 +5,8 @@ import { BsCodeSlash } from 'react-icons/bs';
 import { MdAppShortcut } from 'react-icons/md';
 
 export const categoryIcons = {
-  Programming: <BsCodeSlash />,
-  Gaming: <BiGame />,
+  Code: <BsCodeSlash />,
+  Game: <BiGame />,
   Music: <GiMusicSpell />,
   Sports: <MdSportsGymnastics />,
   Shorts: <MdAppShortcut />,

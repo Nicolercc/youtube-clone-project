@@ -28,12 +28,17 @@ const SearchResults = () => {
   };
 
   return (
-    <div className="home-container">
-      {searchVideos.length > 0 &&
+    <div className="videoList">
+      {searchVideos &&
+        searchVideos.length > 0 &&
         searchVideos.map(
           (video) =>
-            video.id && (
-              <div onClick={() => handleVideoClick(video.id)} key={video.etag}>
+            video.id.videoId &&
+            video.snippet.thumbnails && (
+              <div
+                onClick={() => handleVideoClick(video.id.videoId)}
+                key={video.etag}
+              >
                 <VideoCard video={video} key={video.etag} />
               </div>
             )
