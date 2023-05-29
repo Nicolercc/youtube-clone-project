@@ -7,6 +7,9 @@ import VideoSearch from "./VideoSearch";
 import Home from "./Home";
 import Error from "./Error";
 import SearchResults from "./SearchResults";
+import SearchCard from "./SearchCard";
+import CommentForm from "./CommentForm";
+import AboutMe from "./AboutMe";
 
 export {
   NavBar,
@@ -17,5 +20,8 @@ export {
   VideoCard,
   VideoSearch,
   SearchResults,
+  AboutMe,
+  SearchCard,
+  CommentForm,
   Error,
 };
