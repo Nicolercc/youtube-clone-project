@@ -1,27 +1,32 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { VideoList } from ".";
-import { getData } from "../yt-fetch";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { VideoList } from '.';
+import { fetchMostPopular } from '../yt-fetch';
 
 function Home() {
   const [videos, setVideos] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchApiData = async () => {
+    const getMostPopular = async () => {
       try {
-        const data = await getData();
+        const data = await fetchMostPopular();
         console.log(data);
         setVideos(data);
       } catch (e) {
         console.log(e);
       }
     };
-    fetchApiData();
+    getMostPopular();
   }, []);
+  const handleVideoClick = (videoId) => {
+    navigate(`/video/${videoId}`);
+  };
 
   return (
     <div className="home-container">
-      <VideoList videos={videos} />
+      <VideoList videos={videos} handleVideoClick={handleVideoClick} />
     </div>
   );
 }
