@@ -11,7 +11,7 @@ Global Styles
 }
 a {
   text-decoration: none;
-  color: #5a5a5a
+  color: #5a5a5a;
 }
 img {
   cursor: pointer;
@@ -50,11 +50,11 @@ app content container
 Navbar
 --------------
  */
- .navbar {
+.navbar {
   display: flex;
   align-items: center;
 }
- nav {
+nav {
   justify-content: space-between;
   height: 25%;
   padding: 10px 2%;
@@ -63,7 +63,7 @@ Navbar
   top: 0;
   z-index: 10;
   background-color: white;
- }
+}
 .nav-links a {
   width: 25px;
   margin-right: 25px;
@@ -77,7 +77,6 @@ Navbar
   padding: 10px;
 }
 .nav-form .search-box {
-  
   border: 1px solid #ccc;
   margin-right: 15px;
   padding: 8px 12px;
@@ -109,7 +108,6 @@ Sidebar
   /* overflow: hidden; */
   padding-left: 1rem;
   padding-right: 1rem;
-  
 }
 .middle-sidebar {
   display: flex;
@@ -126,7 +124,8 @@ Sidebar
   width: 100%;
 }
 
-.category-list li, .category-list a {
+.category-list li,
+.category-list a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,7 +189,6 @@ a.active {
 .info-footer span {
   font-size: 14px;
   margin-bottom: 1rem;
-  
 }
 .settings .theme {
   color: #5a5a5a;
@@ -204,15 +202,15 @@ h6 {
 Main Content
 --------------
 */
-.videoList{
+.videoList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 15px;
 }
 .video-card .thumbnail {
-   width: 100%;
-   border-radius: 5%;
+  width: 100%;
+  border-radius: 5%;
 }
 .video-title {
   color: #0f0f0f;
@@ -227,15 +225,142 @@ Main Content
   color: rgb(111, 109, 109);
 }
 .date {
-display: inline-block;
-font-weight: 500;
+  display: inline-block;
+  font-weight: 500;
 }
-.date::before{
+.date::before {
   content: ".";
   margin: 0 4px;
   font-size: 24px;
   font-weight: 700;
   position: relative;
   top: -3px;
-  
+}
+
+/* ----
+comment section 
+---- */
+
+/* Form styles */
+
+.section-form {
+  width: var(--smallWidth);
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+
+.hr {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+  margin-bottom: 20px;
+}
+.commentsForm {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.commForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.commForm label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.commInput {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#formButton {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+#formButton:hover {
+  background-color: #3e8e41;
+}
+
+/* Comment styles */
+
+.comm {
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+}
+
+.comm li {
+  margin-bottom: 20px;
+}
+
+.commenter {
+  font-weight: bold;
+}
+
+.commentText {
+  margin-left: 20px;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.deleteButton:hover {
+  background-color: #da190b;
+}
+
+.editButton {
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.editButton:hover {
+  background-color: #006a80;
+}
+
+/* --- 
+about me page
+---  */
+
+.main-container {
+  display: flex;
+}
+
+.main-content {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  margin-right: 20px;
 }

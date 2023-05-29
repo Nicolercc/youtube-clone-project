@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import YouTube from 'react-youtube';
-import { useParams } from 'react-router-dom';
-
-import { fetchVideoByID } from '../yt-fetch';
+import React, { useState, useEffect } from "react";
+import YouTube from "react-youtube";
+import { useParams } from "react-router-dom";
+import { CommentForm } from ".";
+import { fetchVideoByID } from "../yt-fetch";
 
 function VideoDetails() {
   const [video, setVideo] = useState(null);
@@ -40,6 +40,7 @@ function VideoDetails() {
           </>
         )}
       </div>
+      <CommentForm />
     </div>
   );
 }

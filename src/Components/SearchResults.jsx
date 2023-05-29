@@ -1,9 +1,9 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { VideoCard } from '.';
+import React from "react";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { SearchCard } from ".";
 
-import { fetchUserSearch } from '../yt-fetch';
+import { fetchUserSearch } from "../yt-fetch";
 
 const SearchResults = () => {
   const [searchVideos, setSearchVideos] = useState([]);
@@ -39,7 +39,7 @@ const SearchResults = () => {
                 onClick={() => handleVideoClick(video.id.videoId)}
                 key={video.etag}
               >
-                <VideoCard video={video} key={video.etag} />
+                <SearchCard video={video} key={video.etag} />
               </div>
             )
         )}
