@@ -1,12 +1,13 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import VideoSearch from './VideoSearch';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import VideoSearch from "./VideoSearch";
+import Logo from "./Assets/logo.png";
 
 function NavBar() {
   return (
     <nav className="navbar">
       <div className="logo-container navbar">
-        <h3 className="logo">Youtube</h3>
+        <img src={Logo} alt="logo" className="logo" />
       </div>
       <div className="nav-form navbar">
         <VideoSearch />

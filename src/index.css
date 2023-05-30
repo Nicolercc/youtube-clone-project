@@ -23,7 +23,7 @@ Home
 .App {
   display: flex;
   /* flex-direction: column; */
- 
+
   /* height: 100vh; */
 }
 
@@ -31,8 +31,6 @@ Home
   margin-left: 20px;
   display: flex;
 }
-
-
 
 .side-container {
   display: flex;
@@ -45,7 +43,6 @@ Home
     padding-left: 2px;
   }
 } */
-
 
 .main-content {
   margin-left: 20px;
@@ -74,7 +71,6 @@ Home
   color: #f31503;
 }
 
-
 /* 
 --------------
 Navbar
@@ -83,9 +79,9 @@ Navbar
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 nav {
-  justify-content: space-between;
   height: 25%;
   padding: 10px 2%;
   box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.4);
@@ -160,7 +156,6 @@ Sidebar
   align-items: center;
   margin-bottom: 1rem;
   margin-top: 1rem;
- 
 }
 .category-btn {
   width: 100%;
@@ -170,19 +165,18 @@ Sidebar
   margin-right: 15px;
 }
 .category-btn:hover {
-  background-color: #FC1503;
+  background-color: #fc1503;
   color: white;
 }
 
-.category-btn:hover span{
+.category-btn:hover span {
   color: white;
 }
 .category-btn span {
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 
 .category-list li svg {
-  
   width: 25px;
   height: 25px;
 }
@@ -259,12 +253,11 @@ Main Content
 
 @media (max-width: 768px) {
   .videoList {
-   grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .category-list .text {
     display: none;
   }
-  
 }
 .video-card .thumbnail {
   width: 100%;
