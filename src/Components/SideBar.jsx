@@ -1,8 +1,8 @@
 import React from 'react';
-import { categoryIcons } from '../utils';
+import { categories } from '../utils';
 import { NavLink } from 'react-router-dom';
 
-const Sidebar = () => {
+const SideBar = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <div className="sidebar">
       <div className="top-sidebar">
@@ -12,20 +12,37 @@ const Sidebar = () => {
         </NavLink>
       </div>
       <div className="middle-sidebar">
-        <ul className="category-list">
-          {Object.entries(categoryIcons).map(([category, icon]) => (
-            <li key={category}>
-              <NavLink
-                to={`/category/${category}`}
-                style={(isActive) => ({
-                  className: isActive ? 'active ' : 'navlink',
-                })}
+        <div className="category-list">
+          {categories.map((category) => (
+            <li key={category.name}>
+              <button
+                style={{
+                  background: category.name === selectedCategory && '#FC1503',
+                  color: '#333',
+                }}
+                onClick={() => {
+                  setSelectedCategory(category.name);
+                }}
               >
-                {icon} {category}
-              </NavLink>
+                <span
+                  style={{
+                    color: category.name === selectedCategory ? 'white' : 'red',
+                    marginRight: '15px',
+                  }}
+                >
+                  {category.icon}
+                </span>
+                <span
+                  style={{
+                    opacity: category.name === selectedCategory ? '1' : '0.8',
+                  }}
+                >
+                  {category.name}
+                </span>
+              </button>
             </li>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="bottom-sidebar">
         {/* <div className="settings">
@@ -41,4 +58,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

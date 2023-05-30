@@ -125,12 +125,17 @@ Sidebar
 }
 
 .category-list li,
-.category-list a {
+.category-list button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 3rem;
   margin-top: 2rem;
+}
+button {
+  border: none;
+  padding: 12px;
+  border-radius: 20px;;
 }
 
 .category-list li svg {
@@ -155,7 +160,7 @@ Sidebar
   width: 25px;
   height: 25px;
 }
-a.active {
+button.active {
   color: rgb(204, 0, 0);
   background-color: #fffefe;
 }
@@ -218,7 +223,7 @@ Main Content
   line-height: 1.6rem;
   /* font-weight: 500; */
   text-overflow: ellipsis;
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: normal;
 }
 .channel {
