@@ -1,13 +1,13 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { VideoList, SideBar, MostPopular } from '.';
-import { fetchMostPopular, fetchSearchResults } from '../yt-fetch';
+import React from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { VideoList, SideBar, MostPopular } from ".";
+import { fetchMostPopular, fetchSearchResults } from "../yt-fetch";
 
 function Home() {
   const [homeVideos, setHomeVideos] = useState([]);
   const [CategoryVideos, setCategoryVideos] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('Trending');
+  const [selectedCategory, setSelectedCategory] = useState("Trending");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,21 +37,21 @@ function Home() {
   };
   useEffect(() => {
     const category = selectedCategory;
-    if (selectedCategory !== '') {
+    if (selectedCategory !== "") {
       handleSearch(category);
     }
   }, [selectedCategory]);
 
   return (
-    <div className="App">
-      <div className="side-container">
+    <div className="container-fluid">
+      <div className="row flex-nowrap">
         <SideBar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
           videos={homeVideos}
         />
 
-        <div className="main-container">
+        <div className="col py-3">
           {selectedCategory ? (
             <VideoList
               videos={CategoryVideos}

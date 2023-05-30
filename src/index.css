@@ -150,8 +150,7 @@ Sidebar
   width: 100%;
 }
 
-.category-list li,
-.category-list button {
+.category-list li {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -162,7 +161,11 @@ Sidebar
   border: none;
   padding: 12px;
   border-radius: 20px;
-  margin-right: 15px;
+  /* margin-right: 15px; */
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .category-btn:hover {
   background-color: #fc1503;
@@ -257,6 +260,10 @@ Main Content
   }
   .category-list .text {
     display: none;
+  }
+  .category-btn {
+    /* display: flex; */
+    align-items: center;
   }
 }
 .video-card .thumbnail {
@@ -402,7 +409,7 @@ comment section
 about me page
 ---  */
 
-.main-container {
+/* .main-container {
   display: flex;
 }
 
@@ -415,4 +422,4 @@ about me page
 .column {
   flex: 1;
   margin-right: 20px;
-}
+} */
