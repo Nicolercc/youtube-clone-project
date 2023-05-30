@@ -28,7 +28,7 @@ async function fetchUserSearch(input) {
 async function fetchVideoByID(id) {
   try {
     const res = await axios.get(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${KEY}`
+      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${KEY}`
     );
     console.log(res.data.items[0]);
     return res.data.items[0];
@@ -37,4 +37,19 @@ async function fetchVideoByID(id) {
   }
 }
 
-export { fetchMostPopular, fetchUserSearch, fetchVideoByID };
+const fetchSearchResults = async (query) => {
+  try {
+    const url = `${URL}search?part=snippet&maxResults=50&q=${query}&regionCode=US&type=video&key=${KEY}`;
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching search results:', error);
+  }
+};
+
+export {
+  fetchMostPopular,
+  fetchUserSearch,
+  fetchVideoByID,
+  fetchSearchResults,
+};
