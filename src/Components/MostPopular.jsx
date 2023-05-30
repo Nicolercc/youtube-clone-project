@@ -3,6 +3,7 @@ import { VideoCard } from '.';
 import { useNavigate } from 'react-router-dom';
 
 const MostPopular = ({ videos }) => {
+  console.log(videos);
   const navigate = useNavigate();
 
   const handleVideoClick = (videoId) => {

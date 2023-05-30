@@ -4,6 +4,7 @@ import { categories } from '../utils';
 import MostPopular from './MostPopular';
 
 const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
+  // console.log(selectedCategory === 'MostPopular');
   return (
     <div className="sidebar">
       <div className="">
