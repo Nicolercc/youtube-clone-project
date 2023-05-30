@@ -9,6 +9,7 @@ import Error from './Error';
 import SearchResults from './SearchResults';
 import SearchCard from './SearchCard';
 import CommentForm from './CommentForm';
+import MostPopular from './MostPopular';
 import AboutMe from './AboutMe';
 
 export {
@@ -23,5 +24,6 @@ export {
   AboutMe,
   SearchCard,
   CommentForm,
+  MostPopular,
   Error,
 };

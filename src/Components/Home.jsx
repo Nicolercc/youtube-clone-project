@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { VideoList, SideBar } from '.';
+import { VideoList, SideBar, MostPopular } from '.';
 import { fetchMostPopular, fetchSearchResults } from '../yt-fetch';
 
 function Home() {
   const [homeVideos, setHomeVideos] = useState([]);
-  const [videos, setVideos] = useState([]);
+  const [CategoryVideos, setCategoryVideos] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('Trending');
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ function Home() {
     try {
       // const query = category;
       const data = await fetchSearchResults(category);
-      setVideos(data.items);
+      setCategoryVideos(data.items);
       setSelectedCategory(category);
     } catch (error) {
       console.log(error);
@@ -43,21 +43,28 @@ function Home() {
   }, [selectedCategory]);
 
   return (
-    <div className="main-container">
-      <SideBar
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
-      <div className="main-content">
-        {selectedCategory ? (
-          <VideoList
-            videos={videos}
-            handleVideoClick={handleVideoClick}
-            selectedCategory={selectedCategory}
-          />
-        ) : (
-          <VideoList videos={homeVideos} handleVideoClick={handleVideoClick} />
-        )}
+    <div className="App">
+      <div className="side-container">
+        <SideBar
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          videos={homeVideos}
+        />
+
+        <div className="main-container">
+          {selectedCategory ? (
+            <VideoList
+              videos={CategoryVideos}
+              handleVideoClick={handleVideoClick}
+              selectedCategory={selectedCategory}
+            />
+          ) : (
+            <MostPopular
+              videos={homeVideos}
+              handleVideoClick={handleVideoClick}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

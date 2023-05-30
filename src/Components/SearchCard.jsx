@@ -10,7 +10,7 @@ const VideoCard = ({ video }) => {
     <div className="video-card">
       <Link to={`/video/${video.id}`}>
         <img src={thumbnail} alt="thumbnail" className="thumbnail" />
-        <h2 className="video-title">{video.snippet.title.slice(0, 60)}</h2>
+        <h2 className="video-title">{video.snippet.title}</h2>
       </Link>
     </div>
   );

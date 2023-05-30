@@ -12,7 +12,7 @@ import './index.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <>
         <NavBar />
 
         <Routes>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/about" element={<AboutMe />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </div>
+      </>
     </Router>
   );
 }

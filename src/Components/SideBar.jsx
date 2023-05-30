@@ -1,21 +1,46 @@
 import React from 'react';
+import { AiOutlineHome } from 'react-icons/ai';
 import { categories } from '../utils';
-import { NavLink } from 'react-router-dom';
+import MostPopular from './MostPopular';
 
-const SideBar = ({ selectedCategory, setSelectedCategory }) => {
+const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
   return (
     <div className="sidebar">
-      <div className="top-sidebar">
-        <NavLink to="/">
-          <span className="material-icons home-icon">home</span>
-          <p>Home</p>
-        </NavLink>
-      </div>
-      <div className="middle-sidebar">
+      <div className="">
         <div className="category-list">
+          <li>
+            <button
+              className="category-btn"
+              style={{
+                background: selectedCategory === 'MostPopular' && '#FC1503',
+                color: '#333',
+              }}
+              onClick={() => {
+                setSelectedCategory('MostPopular');
+              }}
+            >
+              <span
+                style={{
+                  color: selectedCategory === 'MostPopular' ? 'white' : 'red',
+                  marginRight: '15px',
+                }}
+              >
+                <AiOutlineHome />
+              </span>
+              <span
+                className="text"
+                style={{
+                  opacity: selectedCategory === 'MostPopular' ? '1' : '0.8',
+                }}
+              >
+                MostPopular
+              </span>
+            </button>
+          </li>
           {categories.map((category) => (
             <li key={category.name}>
               <button
+                className="category-btn"
                 style={{
                   background: category.name === selectedCategory && '#FC1503',
                   color: '#333',
@@ -33,6 +58,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
                   {category.icon}
                 </span>
                 <span
+                  className="text"
                   style={{
                     opacity: category.name === selectedCategory ? '1' : '0.8',
                   }}
@@ -44,16 +70,11 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
           ))}
         </div>
       </div>
-      <div className="bottom-sidebar">
-        {/* <div className="settings">
-          <AiOutlineSetting className="icon" />
-          <span className="theme">Settings</span>
+      {selectedCategory === 'MostPopular' && (
+        <div className="most-popular">
+          <MostPopular videos={homeVideos} />
         </div>
-        <div className="info-footer">
-          <span className="copy">{new Date().getFullYear()} Ytube</span>
-          <h6>&copy; Copyright</h6>
-        </div> */}
-      </div>
+      )}
     </div>
   );
 };
