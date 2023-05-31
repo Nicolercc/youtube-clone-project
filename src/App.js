@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   NavBar,
   Home,
@@ -6,9 +6,8 @@ import {
   AboutMe,
   SearchResults,
   CategorySearch,
-  Error,
-} from './Components';
-import './index.css';
+} from "./Components";
+import "./index.css";
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
           <Route path="/video/:id" element={<VideoDetails />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/categories" element={<CategorySearch />} />
-          <Route path="*" element={<Error />} />
+          {/* <Route path="*" element={<Error />} /> */}
         </Routes>
       </>
     </Router>
