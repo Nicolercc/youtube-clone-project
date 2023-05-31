@@ -1,28 +1,24 @@
 import React from 'react';
-import { VideoCard, SearchCard } from '.';
+import VideoCard from './VideoCard';
+import { useNavigate } from 'react-router-dom';
 
-function VideoList({ videos, selectedCategory, handleVideoClick }) {
+function VideoList({ homeVideos }) {
+  // console.log(homeVideos);
+  const navigate = useNavigate();
+
+  const handleVideoClick = (videoId) => {
+    navigate(`/video/${videoId}`);
+  };
   return (
     <div className="videoList">
-      {videos.length > 0 &&
-        videos.map((video) => {
-          return video.id.videoId && video.snippet.thumbnails ? (
-            selectedCategory === 'Most Popular' ? (
-              <div
-                onClick={() => handleVideoClick(video.id.videoId)}
-                key={video.etag}
-              >
-                <VideoCard video={video} key={video.etag} />
-              </div>
-            ) : (
-              <div
-                onClick={() => handleVideoClick(video.id.videoId)}
-                key={video.etag}
-              >
-                <SearchCard video={video} key={video.etag} />
-              </div>
-            )
-          ) : null;
+      {homeVideos &&
+        homeVideos.length > 0 &&
+        homeVideos.map((video) => {
+          return (
+            <div onClick={() => handleVideoClick(video.id)} key={video.etag}>
+              <VideoCard video={video} key={video.etag} />
+            </div>
+          );
         })}
     </div>
   );

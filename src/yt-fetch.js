@@ -47,9 +47,23 @@ const fetchSearchResults = async (query) => {
   }
 };
 
+async function fetchRelatedVideos(id) {
+  try {
+    const response = await axios.get(
+      `${URL}search?part=snippet&relatedToVideoId=${id}&type=video&key=${KEY}`
+    );
+    // console.log(response.data);
+    return response.data.items;
+  } catch (error) {
+    console.error('Error fetching related videos:', error);
+    throw error;
+  }
+}
+
 export {
   fetchMostPopular,
   fetchUserSearch,
   fetchVideoByID,
   fetchSearchResults,
+  fetchRelatedVideos,
 };

@@ -261,29 +261,43 @@ Main Content
     display: none;
   }
   .category-btn {
-    /* display: flex; */
+    
     align-items: center;
   }
 }
-.video-card .thumbnail {
+.video {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
   border-radius: 5%;
+  margin-top: .7rem;
+  transition: all 0.3s linear;
+}
+ 
+.video-card .thumbnail, .video .thumbnail {
+  width: 100%;
+  border-radius: 5%;
+  margin-bottom: .7rem;
+  transition: all 0.3s linear;
+}
+.thumbnail:hover {
+  box-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.8);
 }
 .video-title {
   color: #0f0f0f;
   font-size: 1rem;
-  line-height: 1.6rem;
-  width: 100px;
-  /* font-weight: 500; */
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  font-weight: 700;
 }
 .channel {
-  color: rgb(111, 109, 109);
+  color: #424040;
+  margin-right: 5px;
+}
+.channel-check {
+  color: green;
+  background: transparent;
+  margin-left: 5px;
 }
 .date {
-  display: inline-block;
   font-weight: 500;
 }
 .date::before {
@@ -295,23 +309,60 @@ Main Content
   top: -3px;
 }
 
+.profile-image {
+  object-fit: contain;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #595757;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.initials {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+/* -----------
+Video Details
+-------------- */
+
+@media (max-width: 850px) {
+  .related-videos {
+    display: none;
+  }
+}
+
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 2rem;
+}
+
 /* ----
 comment section 
 ---- */
 
 /* Form styles */
 
-.section-form {
-  width: var(--smallWidth);
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-}
 
-.hr {
+
+hr {
   height: 1px;
   background-color: #ccc;
-  border: none;
   margin-bottom: 20px;
+  max-width: 500px;
 }
 .commentsForm {
   font-size: 20px;
@@ -334,7 +385,8 @@ comment section
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 1px solid #ccc;
 }
 
 #formButton {
@@ -366,15 +418,17 @@ comment section
 
 .commenter {
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .commentText {
   margin-left: 20px;
+  text-transform: capitalize;
 }
 
 .deleteButton {
-  background-color: #f44336;
-  color: #fff;
+  
+  color: #f44336;
   border: none;
   border-radius: 10%;
   cursor: pointer;
@@ -386,11 +440,12 @@ comment section
 
 .deleteButton:hover {
   background-color: #da190b;
+  color: #fff;
 }
 
 .editButton {
-  background-color: #008cba;
-  color: #fff;
+  
+  color: #008cba;
   border: none;
   border-radius: 10%;
   cursor: pointer;
@@ -402,6 +457,7 @@ comment section
 
 .editButton:hover {
   background-color: #006a80;
+  color: #fff;
 }
 
 /* --- 
