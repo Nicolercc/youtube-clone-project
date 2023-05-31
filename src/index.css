@@ -75,6 +75,13 @@ Home
 Navbar
 --------------
  */
+.active {
+  color: red;
+}
+
+.navlink {
+  color: black;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -261,7 +268,6 @@ Main Content
     display: none;
   }
   .category-btn {
-    
     align-items: center;
   }
 }
@@ -270,14 +276,15 @@ Main Content
   justify-content: space-around;
   width: 100%;
   border-radius: 5%;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   transition: all 0.3s linear;
 }
- 
-.video-card .thumbnail, .video .thumbnail {
+
+.video-card .thumbnail,
+.video .thumbnail {
   width: 100%;
   border-radius: 5%;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
   transition: all 0.3s linear;
 }
 .thumbnail:hover {
@@ -335,12 +342,11 @@ p {
 Video Details
 -------------- */
 
-@media (max-width: 850px) {
+@media (max-width: 990px) {
   .related-videos {
     display: none;
   }
 }
-
 
 .loading-container {
   display: flex;
@@ -355,8 +361,6 @@ comment section
 ---- */
 
 /* Form styles */
-
-
 
 hr {
   height: 1px;
@@ -427,7 +431,6 @@ hr {
 }
 
 .deleteButton {
-  
   color: #f44336;
   border: none;
   border-radius: 10%;
@@ -444,7 +447,6 @@ hr {
 }
 
 .editButton {
-  
   color: #008cba;
   border: none;
   border-radius: 10%;

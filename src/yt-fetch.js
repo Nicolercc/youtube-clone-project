@@ -11,6 +11,7 @@ async function fetchMostPopular() {
     return res.data.items;
   } catch (e) {
     console.log(e);
+    throw e;
   }
 }
 
@@ -22,6 +23,7 @@ async function fetchUserSearch(input) {
     return res.data.items;
   } catch (e) {
     console.log(e);
+    throw e;
   }
 }
 
@@ -34,6 +36,7 @@ async function fetchVideoByID(id) {
     return res.data.items[0];
   } catch (e) {
     console.log(e);
+    throw e;
   }
 }
 
@@ -44,6 +47,7 @@ const fetchSearchResults = async (query) => {
     return response.data;
   } catch (error) {
     console.error("Error fetching search results:", error);
+    throw error;
   }
 };
 
