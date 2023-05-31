@@ -1,7 +1,7 @@
-import React from 'react';
-import { BsNewspaper } from 'react-icons/bs';
-import { categories } from '../utils';
-import MostPopular from './MostPopular';
+import React from "react";
+import { BsNewspaper } from "react-icons/bs";
+import { categories } from "../utils";
+import MostPopular from "./MostPopular";
 
 const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
   return (
@@ -12,16 +12,16 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
             <button
               className="nav-link align-middle px-0 mt-5"
               onClick={() => {
-                setSelectedCategory('News');
+                setSelectedCategory("News");
               }}
             >
-              {' '}
+              {" "}
               <span
                 className="icon"
                 style={{
-                  color: selectedCategory === 'News' ? 'black' : 'red',
-                  marginRight: '15px',
-                  fontSize: '20px',
+                  color: selectedCategory === "News" ? "black" : "red",
+                  marginRight: "15px",
+                  fontSize: "20px",
                 }}
               >
                 <BsNewspaper />
@@ -29,7 +29,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
               <span
                 className="ms-1 d-none d-sm-inline"
                 style={{
-                  opacity: selectedCategory === 'News' ? '1' : '0.8',
+                  color: selectedCategory === "News" ? "black" : "red",
                 }}
               >
                 News
@@ -44,13 +44,13 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
                   setSelectedCategory(category.name);
                 }}
               >
-                {' '}
+                {" "}
                 <span
                   className="icon"
                   style={{
-                    color: selectedCategory === category.name ? 'black' : 'red',
-                    marginRight: '15px',
-                    fontSize: '20px',
+                    color: selectedCategory === category.name ? "black" : "red",
+                    marginRight: "15px",
+                    fontSize: "20px",
                   }}
                 >
                   {category.icon}
@@ -58,7 +58,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
                 <span
                   className="ms-1 d-none d-sm-inline"
                   style={{
-                    opacity: selectedCategory === 'MostPopular' ? '1' : '0.8',
+                    color: selectedCategory === category.name ? "black" : "red",
                   }}
                 >
                   {category.name}
@@ -68,7 +68,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
           ))}
         </ul>
       </div>
-      {selectedCategory === 'MostPopular' && (
+      {selectedCategory === "MostPopular" && (
         <div className="most-popular">
           <MostPopular videos={homeVideos} />
         </div>

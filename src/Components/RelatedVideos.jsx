@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { fetchRelatedVideos } from '../yt-fetch';
-import { SearchCard } from '.';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { fetchRelatedVideos } from "../yt-fetch";
+import { SearchCard, ErrorModal } from ".";
 
 const RelatedVideos = () => {
   const [relatedVideos, setRelatedVideos] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const { id } = useParams();
 
@@ -18,6 +19,7 @@ const RelatedVideos = () => {
         //   setIsLoading(false);
       } catch (e) {
         console.log(e);
+        setError("Unable to fetch data. Try again later!");
       }
     };
     getRelatedVideos();
@@ -38,11 +40,19 @@ const RelatedVideos = () => {
         relatedVideos.length > 0 &&
         relatedVideos.map((video) => {
           return (
-            <div onClick={() => handleVideoClick(video.id)} key={video.etag}>
+            <div
+              onClick={() => handleVideoClick(video.id.videoId)}
+              key={video.etag}
+            >
               <SearchCard video={video} key={video.etag} />
             </div>
           );
         })}
+      <ErrorModal
+        isOpen={!!error}
+        onClose={() => setError(null)}
+        errorMessage={error}
+      />
     </div>
   );
 };

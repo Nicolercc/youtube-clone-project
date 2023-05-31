@@ -4,6 +4,7 @@ import {
   Home,
   VideoDetails,
   AboutMe,
+  Error,
   SearchResults,
   CategorySearch,
 } from "./Components";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/video/:id" element={<VideoDetails />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/categories" element={<CategorySearch />} />
-          {/* <Route path="*" element={<Error />} /> */}
+          <Route path="*" element={<Error />} />
         </Routes>
       </>
     </Router>

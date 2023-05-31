@@ -13,6 +13,7 @@ import CategorySearch from "./CategorySearch";
 import RelatedVideos from "./RelatedVideos";
 import AboutMe from "./AboutMe";
 import ErrorModal from "./ErrorModal";
+import Error from "./Error";
 
 export {
   NavBar,
@@ -29,5 +30,6 @@ export {
   MostPopular,
   CategorySearch,
   RelatedVideos,
+  Error,
   ErrorModal,
 };
