@@ -43,7 +43,7 @@ const fetchSearchResults = async (query) => {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.error("Error fetching search results:", error);
+    console.error("Error fetching search RESULTS", error);
   }
 };
 
