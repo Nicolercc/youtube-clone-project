@@ -1,11 +1,11 @@
-import React from 'react';
-import Logo from './Assets/logooo.png';
+import React from "react";
+import Logo from "./Assets/logooo.png";
 
 const AboutMe = () => {
   return (
     <div
       className="about container text-center"
-      style={{ fontFamily: 'Libre Baskerville' }}
+      style={{ fontFamily: "Libre Baskerville" }}
     >
       <h3 className="m-4 mt-5 fw-bold"> Welcome to Streamify!</h3>
       <div className="row">
@@ -34,7 +34,7 @@ const AboutMe = () => {
               className="rounded "
               src={Logo}
               alt="logo"
-              style={{ fontSize: '10px' }}
+              style={{ fontSize: "10px" }}
             />
           </div>
           <div className="col-md-4 ms-auto  p-3">
@@ -52,7 +52,7 @@ const AboutMe = () => {
 
         <div className="row">
           <div className="col">
-            <p className=" text-center m-5">
+            <p className=" text-center m-3">
               <span className="fw-bold"> Join</span> the Streamify community
               today and embark on a journey of discovering captivating videos,
               exploring different categories, and engaging with fellow viewers.
@@ -60,6 +60,35 @@ const AboutMe = () => {
               providing you with a remarkable video streaming experience. Happy
               streaming! The Streamify Team
             </p>
+          </div>
+          <hr />
+          <div className="bio row">
+            <h3>Meet the developers:</h3>
+            <div className="col m-3">
+              <h4 className="fw-bold m-3">Amina Moufakkir </h4>
+              <p>
+                As a Full Stack Developer, I bring to the table a diverse set of
+                interests that shape my perspective and approach to my work. In
+                my free time, I enjoy exploring the culinary arts and delving
+                into books that broaden my understanding of the world. These
+                hobbies have taught me the value of patience, attention to
+                detail, and following a well-defined process - skills that
+                directly transfer to my work as a developer.
+              </p>
+            </div>
+            <div className="col m-3">
+              <h4 className="fw-bold m-3">Nicole Rodriguez</h4>
+              <p>
+                As a passionate Full Stack Developer with a strong interest in
+                media, I offer a diverse range of skills and experiences that
+                enhance my work. In addition to my professional expertise, I
+                spend my free time immersed in writing, and media creation,
+                refining my storytelling abilities. This multifaceted background
+                enables me to approach development projects with a creative and
+                comprehensive perspective, delivering innovative solutions to
+                meet diverse needs.
+              </p>
+            </div>
           </div>
         </div>
       </div>

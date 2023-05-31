@@ -1,12 +1,12 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { SearchCard } from '.';
-
-import { fetchUserSearch } from '../yt-fetch';
+import React from "react";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { SearchCard, ErrorModal } from ".";
+import { fetchUserSearch } from "../yt-fetch";
 
 const SearchResults = () => {
   const [searchVideos, setSearchVideos] = useState([]);
+  const [error, setError] = useState(null);
   const { input } = useParams();
   const navigate = useNavigate();
 
@@ -18,6 +18,7 @@ const SearchResults = () => {
         setSearchVideos(data);
       } catch (e) {
         console.log(e);
+        setError("Cannot fetch data. Sorry!");
       }
     };
     getUserSearch();
@@ -41,6 +42,11 @@ const SearchResults = () => {
                 key={video.etag}
               >
                 <SearchCard video={video} key={video.etag} />
+                <ErrorModal
+                  isOpen={!!error}
+                  onClose={() => setError(null)}
+                  errorMessage={error}
+                />
               </div>
             )
         )}
