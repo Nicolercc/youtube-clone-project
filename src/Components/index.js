@@ -10,6 +10,8 @@ import SearchResults from './SearchResults';
 import SearchCard from './SearchCard';
 import CommentForm from './CommentForm';
 import MostPopular from './MostPopular';
+import CategorySearch from './CategorySearch';
+import RelatedVideos from './RelatedVideos';
 import AboutMe from './AboutMe';
 
 export {
@@ -25,5 +27,7 @@ export {
   SearchCard,
   CommentForm,
   MostPopular,
+  CategorySearch,
+  RelatedVideos,
   Error,
 };

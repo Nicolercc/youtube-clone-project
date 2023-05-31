@@ -1,11 +1,11 @@
-import React from "react";
-import Logo from "./Assets/logooo.png";
+import React from 'react';
+import Logo from './Assets/logooo.png';
 
 const AboutMe = () => {
   return (
     <div
       className="about container text-center"
-      style={{ fontFamily: "Libre Baskerville" }}
+      style={{ fontFamily: 'Libre Baskerville' }}
     >
       <h3 className="m-4 mt-5 fw-bold"> Welcome to Streamify!</h3>
       <div className="row">
@@ -34,7 +34,7 @@ const AboutMe = () => {
               className="rounded "
               src={Logo}
               alt="logo"
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: '10px' }}
             />
           </div>
           <div className="col-md-4 ms-auto  p-3">

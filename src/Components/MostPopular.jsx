@@ -1,9 +1,9 @@
 import React from 'react';
-import { VideoCard } from '.';
+import { SearchCard } from '.';
 import { useNavigate } from 'react-router-dom';
 
 const MostPopular = ({ videos }) => {
-  console.log(videos);
+  // console.log(videos);
   const navigate = useNavigate();
 
   const handleVideoClick = (videoId) => {
@@ -20,7 +20,7 @@ const MostPopular = ({ videos }) => {
                 onClick={() => handleVideoClick(video.id.videoId)}
                 key={video.etag}
               >
-                <VideoCard video={video} key={video.etag} />
+                <SearchCard video={video} key={video.etag} />
               </div>
             );
           }

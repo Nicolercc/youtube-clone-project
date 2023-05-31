@@ -1,19 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { MdDeleteOutline } from 'react-icons/md';
+import { getRandomColor, generateInitials } from '../helpers';
 
 function CommentForm() {
-  const [commenter, setCommenter] = useState("");
-  const [comment, setComment] = useState("");
+  const [commenter, setCommenter] = useState('');
+  const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    const storedComments = JSON.parse(localStorage.getItem("comments"));
+    const storedComments = JSON.parse(localStorage.getItem('comments'));
     if (storedComments) {
       setComments(storedComments);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("comments", JSON.stringify(comments));
+    localStorage.setItem('comments', JSON.stringify(comments));
   }, [comments]);
 
   function handleFormSubmit(e) {
@@ -23,8 +26,8 @@ function CommentForm() {
     } else {
       updateComment(editingCommentIndex);
     }
-    setComment("");
-    setCommenter("");
+    setComment('');
+    setCommenter('');
     setEditingCommentIndex(null);
   }
 
@@ -54,53 +57,75 @@ function CommentForm() {
     setComments(arr);
   }
 
+  // const initials = generateInitials(commenter);
+  // const randomColor = getRandomColor();
+
   return (
     <section className="section-form">
       <hr className="hr"></hr>
       <h4 className="commentsForm">Leave a Comment: </h4>
       <form className="commForm">
-        <label htmlFor="commenter">Name</label>
-        <br />
+        <label htmlFor="commenter">{commenter}</label>
         <input
           className="commInput"
           type="text"
           id="commenter"
+          placeholder="Your Name"
           value={commenter}
           onChange={(e) => setCommenter(e.target.value)}
         ></input>
         <br />
-        <label htmlFor="comment">Comment</label>
-        <br />
+        <label htmlFor="comment">{Comment}</label>
         <input
           className="commInput"
           type="text"
+          placeholder="Leave a Comment"
           id="comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         ></input>
         <br />
         <button id="formButton" type="submit" onClick={handleFormSubmit}>
-          {editingCommentIndex !== null ? "Update Comment" : "Add Comment"}
+          {editingCommentIndex !== null ? 'Update Comment' : 'Add Comment'}
         </button>
       </form>
-      <ul className="comm">
+      <div className="comm">
         {comments.map((c, i) => {
+          const initials = generateInitials(c.commenter);
+          const randomColor = getRandomColor();
+
           return (
-            <li key={i}>
-              <span className="commenter">{c.commenter}</span>
-              <br />
-              <span className="commentText">{c.comment}</span>
-              <br />
-              <button className="editButton" onClick={() => editComment(i)}>
-                Edit
-              </button>
-              <button className="deleteButton" onClick={() => deleteComment(i)}>
-                Delete
-              </button>
-            </li>
+            <div key={i}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  maxWidth: '100%',
+                }}
+              >
+                <div
+                  className="profile-image"
+                  style={{ backgroundColor: randomColor }}
+                >
+                  <span className="initials">{initials}</span>
+                </div>
+                <p className="commenter">{c.commenter}</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <p className="commentText">{c.comment}</p>
+                <span className="editButton" onClick={() => editComment(i)}>
+                  <AiOutlineEdit />
+                </span>
+                <span className="deleteButton" onClick={() => deleteComment(i)}>
+                  <MdDeleteOutline />
+                </span>
+              </div>
+              <hr />
+            </div>
           );
         })}
-      </ul>
+      </div>
     </section>
   );
 }
