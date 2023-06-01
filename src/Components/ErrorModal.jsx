@@ -25,7 +25,7 @@ const ErrorModal = ({ isOpen, onClose, errorMessage }) => {
         style={customStyles}
         ariaHideApp={false}
       >
-        <h2>Opps something went wrong!</h2>
+        <h2>Oops something went wrong!</h2>
         <p>{errorMessage}</p>
         <button onClick={onClose} className="btn clear">
           Close

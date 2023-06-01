@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import VideoSearch from "./VideoSearch";
 import Logo from "./Assets/logo.png";
-import { categories } from "../utils";
 
 function NavBar() {
   return (
