@@ -1,9 +1,8 @@
-import React from 'react';
-import { SearchCard } from '.';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { SearchCard } from ".";
+import { useNavigate } from "react-router-dom";
 
 const MostPopular = ({ videos }) => {
-  // console.log(videos);
   const navigate = useNavigate();
 
   const handleVideoClick = (videoId) => {
