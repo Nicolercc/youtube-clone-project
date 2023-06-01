@@ -1,8 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import VideoSearch from "./VideoSearch";
-import Logo from "./Assets/logo.png";
-import { categories } from "../utils";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import VideoSearch from './VideoSearch';
+import Logo from './Assets/logo.png';
 
 function NavBar() {
   return (
@@ -15,14 +14,7 @@ function NavBar() {
         <span className="material-icons mic-icon">mic</span>
       </div>
       <div className="nav-links">
-        <NavLink
-          to="/categories"
-          style={(isActive) => ({
-            className: isActive ? "active " : "navlink",
-          })}
-        >
-          Categories
-        </NavLink>
+        <NavLink to="/categories">Categories</NavLink>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
       </div>
