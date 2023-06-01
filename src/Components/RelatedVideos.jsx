@@ -5,7 +5,7 @@ import { SearchCard, ErrorModal } from ".";
 
 const RelatedVideos = () => {
   const [relatedVideos, setRelatedVideos] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+
   const [error, setError] = useState(null);
 
   const { id } = useParams();
@@ -16,7 +16,6 @@ const RelatedVideos = () => {
         const data = await fetchRelatedVideos(id);
         setRelatedVideos(data);
         console.log(data);
-        //   setIsLoading(false);
       } catch (e) {
         console.log(e);
         setError("Unable to fetch data. Try again later!");
@@ -32,10 +31,7 @@ const RelatedVideos = () => {
   };
 
   return (
-    <div
-      className="row"
-      // style={{ marginLeft: '20rem' }}
-    >
+    <div className="row">
       {relatedVideos &&
         relatedVideos.length > 0 &&
         relatedVideos.map((video) => {

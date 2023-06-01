@@ -1,8 +1,6 @@
 import axios from "axios";
-
 const KEY = process.env.REACT_APP_API_KEY;
 const URL = `https://youtube.googleapis.com/youtube/v3/`;
-
 async function fetchMostPopular() {
   try {
     const res = await axios.get(
@@ -14,7 +12,6 @@ async function fetchMostPopular() {
     throw e;
   }
 }
-
 async function fetchUserSearch(input) {
   try {
     const res = await axios.get(
@@ -26,7 +23,6 @@ async function fetchUserSearch(input) {
     throw e;
   }
 }
-
 async function fetchVideoByID(id) {
   try {
     const res = await axios.get(
@@ -39,7 +35,6 @@ async function fetchVideoByID(id) {
     throw e;
   }
 }
-
 const fetchSearchResults = async (query) => {
   try {
     const url = `${URL}search?part=snippet&maxResults=50&q=${query}&regionCode=US&type=video&key=${KEY}`;
@@ -50,7 +45,6 @@ const fetchSearchResults = async (query) => {
     throw error;
   }
 };
-
 async function fetchRelatedVideos(id) {
   try {
     const response = await axios.get(
@@ -63,7 +57,6 @@ async function fetchRelatedVideos(id) {
     throw error;
   }
 }
-
 export {
   fetchMostPopular,
   fetchUserSearch,

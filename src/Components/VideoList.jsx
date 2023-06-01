@@ -1,9 +1,8 @@
-import React from 'react';
-import VideoCard from './VideoCard';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import VideoCard from "./VideoCard";
+import { useNavigate } from "react-router-dom";
 
 function VideoList({ homeVideos }) {
-  // console.log(homeVideos);
   const navigate = useNavigate();
 
   const handleVideoClick = (videoId) => {

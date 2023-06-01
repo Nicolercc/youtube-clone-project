@@ -61,12 +61,32 @@ const AboutMe = () => {
               streaming! The Streamify Team
             </p>
           </div>
-          <hr />
+
+          <hr className="m-5" />
           <div className="bio row">
-            <h3>Meet the developers:</h3>
+            <h3 className="fw-bold m-5">Meet the developers:</h3>
             <div className="col m-3">
               <h4 className="fw-bold m-3">Amina Moufakkir </h4>
-              <p>
+              <span>
+                <a
+                  className="m-2"
+                  style={{ color: "blue" }}
+                  href="https://github.com/Amina-Moufakkir"
+                >
+                  {" "}
+                  GitHub
+                </a>
+
+                <a
+                  className="m-2"
+                  style={{ color: "blue" }}
+                  href="https://www.linkedin.com/in/amina-moufakkir-2a7500244/"
+                >
+                  LinkedIn
+                </a>
+              </span>
+
+              <p className="m-3">
                 As a Full Stack Developer, I bring to the table a diverse set of
                 interests that shape my perspective and approach to my work. In
                 my free time, I enjoy exploring the culinary arts and delving
@@ -78,7 +98,24 @@ const AboutMe = () => {
             </div>
             <div className="col m-3">
               <h4 className="fw-bold m-3">Nicole Rodriguez</h4>
-              <p>
+              <span>
+                <a
+                  className="m-2"
+                  style={{ color: "blue" }}
+                  href="https://github.com/Nicolercc"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  className="m-2"
+                  style={{ color: "blue" }}
+                  href="https://www.linkedin.com/in/nicolerodriguezz/"
+                >
+                  LinkedIn
+                </a>
+              </span>
+              <p className="m-3 ">
                 As a passionate Full Stack Developer with a strong interest in
                 media, I offer a diverse range of skills and experiences that
                 enhance my work. In addition to my professional expertise, I
