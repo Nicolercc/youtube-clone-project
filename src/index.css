@@ -271,17 +271,8 @@ Main Content
     align-items: center;
   }
 }
-.video {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  border-radius: 5%;
-  margin-top: 0.7rem;
-  transition: all 0.3s linear;
-}
 
-.video-card .thumbnail,
-.video .thumbnail {
+.video-card .thumbnail {
   width: 100%;
   border-radius: 5%;
   margin-bottom: 0.7rem;
@@ -461,7 +452,3 @@ hr {
   background-color: #006a80;
   color: #fff;
 }
-
-/* --- 
-about me page
----  */

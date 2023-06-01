@@ -5,16 +5,15 @@ import { fetchMostPopular } from "../yt-fetch";
 
 function Home() {
   const [homeVideos, setHomeVideos] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+
   const [error, setError] = useState(null);
   useEffect(() => {
     const getMostPopular = async () => {
       try {
         const data = await fetchMostPopular();
         setHomeVideos(data);
-        // setIsLoading(false);
       } catch (e) {
-        setError("Opps Something went wrong! Please try again later");
+        setError("Oops Something went wrong! Please try again later");
         console.log(e);
       }
     };
@@ -24,9 +23,6 @@ function Home() {
   return (
     <div className="container-fluid">
       <div className="col py-3">
-        {/* {isLoading ? (
-          <div>Loading...</div>
-        ) : ( */}
         <>
           <VideoList homeVideos={homeVideos} />
           <ErrorModal
@@ -35,7 +31,6 @@ function Home() {
             errorMessage={error}
           />
         </>
-        {/* )} */}
       </div>
     </div>
   );

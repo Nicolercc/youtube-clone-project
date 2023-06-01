@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import { AiOutlineEdit } from 'react-icons/ai';
-import { MdDeleteOutline } from 'react-icons/md';
-import { getRandomColor, generateInitials } from '../helpers';
+import { useState, useEffect } from "react";
+import { AiOutlineEdit } from "react-icons/ai";
+import { MdDeleteOutline } from "react-icons/md";
+import { getRandomColor, generateInitials } from "../helpers";
 
 function CommentForm() {
-  const [commenter, setCommenter] = useState('');
-  const [comment, setComment] = useState('');
+  const [commenter, setCommenter] = useState("");
+  const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    const storedComments = JSON.parse(localStorage.getItem('comments'));
+    const storedComments = JSON.parse(localStorage.getItem("comments"));
     if (storedComments) {
       setComments(storedComments);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('comments', JSON.stringify(comments));
+    localStorage.setItem("comments", JSON.stringify(comments));
   }, [comments]);
 
   function handleFormSubmit(e) {
@@ -26,8 +26,8 @@ function CommentForm() {
     } else {
       updateComment(editingCommentIndex);
     }
-    setComment('');
-    setCommenter('');
+    setComment("");
+    setCommenter("");
     setEditingCommentIndex(null);
   }
 
@@ -57,9 +57,6 @@ function CommentForm() {
     setComments(arr);
   }
 
-  // const initials = generateInitials(commenter);
-  // const randomColor = getRandomColor();
-
   return (
     <section className="section-form">
       <hr className="hr"></hr>
@@ -86,7 +83,7 @@ function CommentForm() {
         ></input>
         <br />
         <button id="formButton" type="submit" onClick={handleFormSubmit}>
-          {editingCommentIndex !== null ? 'Update Comment' : 'Add Comment'}
+          {editingCommentIndex !== null ? "Update Comment" : "Add Comment"}
         </button>
       </form>
       <div className="comm">
@@ -98,10 +95,10 @@ function CommentForm() {
             <div key={i}>
               <div
                 style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  maxWidth: '100%',
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  maxWidth: "100%",
                 }}
               >
                 <div
@@ -112,7 +109,7 @@ function CommentForm() {
                 </div>
                 <p className="commenter">{c.commenter}</p>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <p className="commentText">{c.comment}</p>
                 <span className="editButton" onClick={() => editComment(i)}>
                   <AiOutlineEdit />
