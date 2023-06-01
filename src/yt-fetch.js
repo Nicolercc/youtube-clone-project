@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 const KEY = process.env.REACT_APP_API_KEY;
 const URL = `https://youtube.googleapis.com/youtube/v3/`;
 async function fetchMostPopular() {
@@ -41,7 +41,7 @@ const fetchSearchResults = async (query) => {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.error("Error fetching search results", error);
+    console.error('Error fetching search results', error);
     throw error;
   }
 };
@@ -53,7 +53,7 @@ async function fetchRelatedVideos(id) {
     // console.log(response.data);
     return response.data.items;
   } catch (error) {
-    console.error("Error fetching related videos:", error);
+    console.error('Error fetching related videos:', error);
     throw error;
   }
 }

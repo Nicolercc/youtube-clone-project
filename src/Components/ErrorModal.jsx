@@ -1,18 +1,18 @@
-import React from "react";
-import Modal from "react-modal";
+import React from 'react';
+import Modal from 'react-modal';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "#fff",
-    borderRadius: "10px",
-    padding: "30px",
-    boxShadow: "0 5px 15px rgba(0, 0, 0, 0.8)",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: '#fff',
+    borderRadius: '10px',
+    padding: '30px',
+    boxShadow: '0 5px 15px rgba(0, 0, 0, 0.8)',
   },
 };
 
