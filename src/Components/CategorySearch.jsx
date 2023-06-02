@@ -1,12 +1,12 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { SideBar, MostPopular, ErrorModal } from ".";
-import { fetchSearchResults } from "../yt-fetch";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SideBar, CategoriesSearch, ErrorModal } from '.';
+import { fetchSearchResults } from '../yt-fetch';
 
 const CategorySearch = () => {
   const [categoryVideos, setCategoryVideos] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("News");
+  const [selectedCategory, setSelectedCategory] = useState('News');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -20,12 +20,12 @@ const CategorySearch = () => {
       setSelectedCategory(category);
     } catch (error) {
       console.log(error);
-      setError("Oops something went wrong!");
+      setError('Oops something went wrong!');
     }
   };
   useEffect(() => {
     const category = selectedCategory;
-    if (selectedCategory !== "") {
+    if (selectedCategory !== '') {
       handleSearch(category);
     }
   }, [selectedCategory]);
@@ -41,7 +41,7 @@ const CategorySearch = () => {
         <div className="col py-3">
           {selectedCategory && (
             <>
-              <MostPopular
+              <CategoriesSearch
                 videos={categoryVideos}
                 handleVideoClick={handleVideoClick}
               />

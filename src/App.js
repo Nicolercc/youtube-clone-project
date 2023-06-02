@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   NavBar,
   Home,
@@ -7,13 +7,14 @@ import {
   Error,
   SearchResults,
   CategorySearch,
-} from "./Components";
-import "./index.css";
+} from './Components';
+
+import './index.css';
 
 function App() {
   return (
-    <Router>
-      <>
+    <div className="container-fluid p-0">
+      <Router>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,8 +24,8 @@ function App() {
           <Route path="/categories" element={<CategorySearch />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

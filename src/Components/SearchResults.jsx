@@ -1,8 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { SearchCard, ErrorModal } from ".";
-import { fetchUserSearch } from "../yt-fetch";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { VideoCard, ErrorModal } from '.';
+import { fetchUserSearch } from '../yt-fetch';
 
 const SearchResults = () => {
   const [searchVideos, setSearchVideos] = useState([]);
@@ -18,7 +18,7 @@ const SearchResults = () => {
         setSearchVideos(data);
       } catch (e) {
         console.log(e);
-        setError("Cannot fetch data. Sorry!");
+        setError('Cannot fetch data. Sorry!');
       }
     };
     getUserSearch();
@@ -29,27 +29,29 @@ const SearchResults = () => {
   };
 
   return (
-    <div className="videoList">
-      {searchVideos &&
-        searchVideos.length > 0 &&
-        searchVideos.map(
-          (video) =>
-            video.id.videoId &&
-            video.snippet.thumbnails && (
-              <div
-                className="video"
-                onClick={() => handleVideoClick(video.id.videoId)}
-                key={video.etag}
-              >
-                <SearchCard video={video} key={video.etag} />
-                <ErrorModal
-                  isOpen={!!error}
-                  onClose={() => setError(null)}
-                  errorMessage={error}
-                />
-              </div>
-            )
-        )}
+    <div className="container">
+      <div className="row justify-content-around">
+        {searchVideos &&
+          searchVideos.length > 0 &&
+          searchVideos.map(
+            (video) =>
+              video.id.videoId &&
+              video.snippet.thumbnails && (
+                <div
+                  className="col-md-3 py-4"
+                  onClick={() => handleVideoClick(video.id.videoId)}
+                  key={video.etag}
+                >
+                  <VideoCard video={video} key={video.etag} />
+                  <ErrorModal
+                    isOpen={!!error}
+                    onClose={() => setError(null)}
+                    errorMessage={error}
+                  />
+                </div>
+              )
+          )}
+      </div>
     </div>
   );
 };

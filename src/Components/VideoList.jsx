@@ -1,6 +1,6 @@
-import React from "react";
-import VideoCard from "./VideoCard";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import VideoCard from './VideoCard';
+import { useNavigate } from 'react-router-dom';
 
 function VideoList({ homeVideos }) {
   const navigate = useNavigate();
@@ -9,17 +9,21 @@ function VideoList({ homeVideos }) {
     navigate(`/video/${videoId}`);
   };
   return (
-    <div className="videoList">
+    <>
       {homeVideos &&
         homeVideos.length > 0 &&
         homeVideos.map((video) => {
           return (
-            <div onClick={() => handleVideoClick(video.id)} key={video.etag}>
+            <div
+              className="col-md-3 py-4"
+              onClick={() => handleVideoClick(video.id)}
+              key={video.etag}
+            >
               <VideoCard video={video} key={video.etag} />
             </div>
           );
         })}
-    </div>
+    </>
   );
 }
 

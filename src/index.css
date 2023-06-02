@@ -18,10 +18,9 @@ img {
 --------------
 Home
 -------------- */
-.App {
-  display: flex;
-
-  font-family: "Poppins", sans-serif;
+body {
+ background: #f1f1f1;
+font-family: "Poppins", sans-serif;
 }
 
 .main-content {
@@ -74,29 +73,16 @@ Navbar
 .navlink {
   color: black;
 }
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 nav {
   height: 25%;
   padding: 10px 2%;
   box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
-  z-index: 10;
   background-color: white;
-}
-.nav-links a {
-  width: 25px;
-  margin-right: 25px;
-}
-.logo-container .menu-icon {
-  width: 22px;
-  margin-right: 0;
-}
-.logo-container .logo {
+} 
+
+.logo {
   width: 130px;
   padding: 10px;
 }
@@ -122,118 +108,8 @@ nav {
 Sidebar
 --------------
 */
-
 .sidebar {
-  border-right: 2px solid rgb(226, 221, 221);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.middle-sidebar {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  width: 100%;
-  width: fit-content;
-}
-.category-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.category-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-.category-btn {
-  width: 100%;
-  border: none;
-  padding: 12px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-.category-btn:hover {
-  background-color: #fc1503;
-  color: white;
-}
-
-.category-btn:hover span {
-  color: white;
-}
-.category-btn span {
-  padding-right: 0.5rem;
-}
-
-.category-list li svg {
-  width: 25px;
-  height: 25px;
-}
-
-.top-sidebar {
-  display: flex;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgb(175, 172, 172);
-  align-items: center;
-}
-.top-sidebar a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.top-sidebar .home-icon {
-  width: 25px;
-  height: 25px;
-}
-button.active {
-  color: rgb(204, 0, 0);
-  background-color: #fffefe;
-}
-
-.bottom-sidebar {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.icon {
-  width: 25px;
-  height: 25px;
-  color: rgb(96, 96, 96);
-  cursor: pointer;
-  margin-right: 10px;
-}
-.icon:hover {
-  color: rgb(13, 13, 13);
-}
-.settings {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  width: fit-content;
-}
-.info-footer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 3rem;
-}
-.info-footer span {
-  font-size: 14px;
-  margin-bottom: 1rem;
-}
-.settings .theme {
-  color: #5a5a5a;
-}
-h6 {
-  width: fit-content;
+  width: 250px;
 }
 
 /* 
@@ -241,23 +117,10 @@ h6 {
 Main Content
 --------------
 */
-.videoList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: 20px;
-}
 
-@media (max-width: 768px) {
-  .videoList {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .category-list .text {
-    display: none;
-  }
-  .category-btn {
-    align-items: center;
-  }
+.video-card {
+  padding: 12px;
+
 }
 
 .video-card .thumbnail {
@@ -271,7 +134,7 @@ Main Content
 }
 .video-title {
   color: #0f0f0f;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 700;
 }
 .channel {
@@ -297,8 +160,8 @@ Main Content
 
 .profile-image {
   object-fit: contain;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: #595757;
   display: flex;
@@ -321,11 +184,7 @@ p {
 Video Details
 -------------- */
 
-@media (max-width: 990px) {
-  .related-videos {
-    display: none;
-  }
-}
+
 
 .loading-container {
   display: flex;
@@ -335,17 +194,15 @@ Video Details
   font-size: 2rem;
 }
 
-/* ----
+/* ------------
 comment section 
----- */
-
-/* Form styles */
+--------------- 
+*/
 
 hr {
   height: 1px;
   background-color: #ccc;
   margin-bottom: 20px;
-  max-width: 500px;
 }
 .commentsForm {
   font-size: 20px;
@@ -356,7 +213,6 @@ hr {
 .commForm {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
 }
 
 .commForm label {
@@ -387,23 +243,18 @@ hr {
   background-color: #3e8e41;
 }
 
-/* Comment styles */
-
 .comm {
   list-style: none;
   margin: 20px;
   padding: 0;
 }
-
 .comm li {
   margin-bottom: 20px;
 }
-
 .commenter {
   font-weight: bold;
   text-transform: capitalize;
 }
-
 .commentText {
   margin-left: 20px;
   text-transform: capitalize;
@@ -416,7 +267,6 @@ hr {
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 5px;
-  margin-left: 10px;
   font-size: 16px;
 }
 
@@ -440,3 +290,19 @@ hr {
   background-color: #006a80;
   color: #fff;
 }
+.youtube-box {
+  position: relative;
+  width: 100;
+  padding-bottom: 56.25%;
+  margin-bottom: 5rem;;
+}
+
+.yt-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border:0;
+}
+

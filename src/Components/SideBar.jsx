@@ -1,27 +1,27 @@
-import React from "react";
-import { BsNewspaper } from "react-icons/bs";
-import { categories } from "../utils";
-import MostPopular from "./MostPopular";
+import React from 'react';
+import { BsNewspaper } from 'react-icons/bs';
+import { categories } from '../utils';
+import { CategoriesSearch } from '.';
 
 const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
   return (
-    <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+    <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light sidebar">
       <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark min-vh-100">
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
           <li className="nav-item">
             <button
               className="nav-link align-middle px-0 mt-5"
               onClick={() => {
-                setSelectedCategory("News");
+                setSelectedCategory('News');
               }}
             >
-              {" "}
+              {' '}
               <span
                 className="icon"
                 style={{
-                  color: selectedCategory === "News" ? "black" : "red",
-                  marginRight: "15px",
-                  fontSize: "20px",
+                  color: selectedCategory === 'News' ? 'red' : 'black',
+                  marginRight: '15px',
+                  fontSize: '20px',
                 }}
               >
                 <BsNewspaper />
@@ -29,7 +29,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
               <span
                 className="ms-1 d-none d-sm-inline"
                 style={{
-                  color: selectedCategory === "News" ? "black" : "red",
+                  color: selectedCategory === 'News' ? 'red' : 'black',
                 }}
               >
                 News
@@ -44,13 +44,13 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
                   setSelectedCategory(category.name);
                 }}
               >
-                {" "}
+                {' '}
                 <span
                   className="icon"
                   style={{
-                    color: selectedCategory === category.name ? "black" : "red",
-                    marginRight: "15px",
-                    fontSize: "20px",
+                    color: selectedCategory === category.name ? 'red' : 'black',
+                    marginRight: '15px',
+                    fontSize: '20px',
                   }}
                 >
                   {category.icon}
@@ -58,7 +58,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
                 <span
                   className="ms-1 d-none d-sm-inline"
                   style={{
-                    color: selectedCategory === category.name ? "black" : "red",
+                    color: selectedCategory === category.name ? 'red' : 'black',
                   }}
                 >
                   {category.name}
@@ -68,9 +68,9 @@ const SideBar = ({ selectedCategory, setSelectedCategory, homeVideos }) => {
           ))}
         </ul>
       </div>
-      {selectedCategory === "MostPopular" && (
+      {selectedCategory === 'MostPopular' && (
         <div className="most-popular">
-          <MostPopular videos={homeVideos} />
+          <CategoriesSearch videos={homeVideos} />
         </div>
       )}
     </div>

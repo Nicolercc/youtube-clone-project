@@ -1,31 +1,50 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import VideoSearch from "./VideoSearch";
-import Logo from "./Assets/logo.png";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { VideoSearch } from '.';
+import Logo from './Assets/logo.png';
 
 function NavBar() {
   return (
-    <nav className="navbar">
-      <div className="logo-container navbar">
-        <img src={Logo} alt="logo" className="logo" />
-      </div>
-      <div className="nav-form navbar">
-        <VideoSearch />
-        <span className="material-icons mic-icon">mic</span>
-      </div>
-      <div className="nav-links">
-        <NavLink
-          to="/categories"
-          style={(isActive) => ({
-            className: isActive ? "active " : "navlink",
-          })}
+    <div className="row ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="navbar-brand">
+          <img className="logo mx-5" src={Logo} alt="logo" />
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
         >
-          Categories
-        </NavLink>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-      </div>
-    </nav>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div
+          className="collapse navbar-collapse justify-content-around"
+          id="navbarCollapse"
+        >
+          <div className="navbar-nav">
+            <NavLink to="/" className="nav-item nav-link">
+              Home
+            </NavLink>
+            <NavLink to="/about" className="nav-item nav-link">
+              About
+            </NavLink>
+            <NavLink
+              to="/categories"
+              className="nav-link "
+              style={(isActive) => ({
+                className: isActive ? 'active' : 'navlink',
+              })}
+            >
+              Categories
+            </NavLink>
+          </div>
+          <div className="nav-form navbar">
+            <VideoSearch />
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 }
 

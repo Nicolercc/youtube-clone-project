@@ -18,7 +18,9 @@ const VideoCard = ({ video }) => {
 
   const durationText = getDurationText(video.snippet.publishedAt);
 
-  const viewCount = formatViewCount(video.statistics.viewCount);
+  const viewCount = video.statistics?.viewCount
+    ? formatViewCount(video.statistics.viewCount)
+    : null;
 
   return (
     <div className="video-card">
@@ -30,13 +32,14 @@ const VideoCard = ({ video }) => {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          maxWidth: '100%',
+          Width: '100%',
         }}
       >
         <div className="profile-image" style={{ backgroundColor: randomColor }}>
           <span className="initials">{initials}</span>
         </div>
-        <h2 className="video-title">{video.snippet.title.slice(0, 40)}...</h2>
+
+        <h2 className="video-title">{video.snippet.title.slice(0, 30)}...</h2>
       </div>
 
       <div
@@ -56,8 +59,12 @@ const VideoCard = ({ video }) => {
           maxWidth: '100%',
         }}
       >
-        {viewCount && <span className="channel">{viewCount}</span>}
-        <span className="date channel">{durationText}</span>
+        {viewCount && (
+          <>
+            <span className="channel">{viewCount}</span>
+            <span className="date channel">{durationText}</span>
+          </>
+        )}
       </div>
     </div>
   );
