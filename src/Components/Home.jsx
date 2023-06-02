@@ -21,7 +21,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row justify-content-around">
         <VideoList homeVideos={homeVideos} />
       </div>

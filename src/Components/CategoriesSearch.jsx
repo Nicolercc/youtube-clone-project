@@ -10,7 +10,7 @@ const CategoriesSearch = ({ videos }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row justify-content-around">
         {videos &&
           videos.map((video) => {

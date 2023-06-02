@@ -29,7 +29,7 @@ const SearchResults = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row justify-content-around">
         {searchVideos &&
           searchVideos.length > 0 &&
