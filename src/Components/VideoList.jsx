@@ -9,21 +9,23 @@ function VideoList({ homeVideos }) {
     navigate(`/video/${videoId}`);
   };
   return (
-    <>
-      {homeVideos &&
-        homeVideos.length > 0 &&
-        homeVideos.map((video) => {
-          return (
-            <div
-              className="col-md-3 py-4"
-              onClick={() => handleVideoClick(video.id)}
-              key={video.etag}
-            >
-              <VideoCard video={video} key={video.etag} />
-            </div>
-          );
-        })}
-    </>
+    <div className="container px-5">
+      <div className="row justify-content-around">
+        {homeVideos &&
+          homeVideos.length > 0 &&
+          homeVideos.map((video) => {
+            return (
+              <div
+                className="col-md-3 p-4"
+                onClick={() => handleVideoClick(video.id)}
+                key={video.etag}
+              >
+                <VideoCard video={video} key={video.etag} />
+              </div>
+            );
+          })}
+      </div>
+    </div>
   );
 }
 

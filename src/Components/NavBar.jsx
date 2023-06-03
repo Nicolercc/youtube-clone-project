@@ -5,13 +5,13 @@ import Logo from './Assets/logo.png';
 
 function NavBar() {
   return (
-    <div className="row ">
+    <div className="row">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="navbar-brand">
           <img className="logo mx-5" src={Logo} alt="logo" />
         </div>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"

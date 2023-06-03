@@ -38,7 +38,7 @@ const SearchResults = () => {
               video.id.videoId &&
               video.snippet.thumbnails && (
                 <div
-                  className="col-md-3 py-4"
+                  className="col-md-3 pt-4"
                   onClick={() => handleVideoClick(video.id.videoId)}
                   key={video.etag}
                 >

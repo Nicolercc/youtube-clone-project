@@ -23,44 +23,6 @@ body {
 font-family: "Poppins", sans-serif;
 }
 
-.main-content {
-  margin-left: 20px;
-  display: flex;
-}
-
-.side-container {
-  display: flex;
-  height: auto;
-  padding-left: 0;
-}
-
-.main-content {
-  margin-left: 20px;
-  display: flex;
-}
-
-.sidebar .copyright {
-  margin-top: 1.5rem;
-  color: #fff;
-}
-
-.side-secondary {
-  padding: 16px;
-  overflow-y: auto;
-  height: 90vh;
-  flex: 2;
-}
-
-.box-secondary h4 {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: white;
-}
-
-.box-secondary h4 span {
-  color: #f31503;
-}
-
 /* 
 --------------
 Navbar
@@ -70,7 +32,7 @@ Navbar
   color: red;
 }
 
-.navlink {
+.nav-link {
   color: black;
 }
 nav {
@@ -108,7 +70,15 @@ nav {
 Sidebar
 --------------
 */
-
+.home-side {
+  max-width: 5%;
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+  border:none;
+  background-color: transparent;;
+}
 
 /* 
 --------------

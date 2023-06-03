@@ -11,13 +11,13 @@ const CategoriesSearch = ({ videos }) => {
 
   return (
     <div className="container-fluid">
-      <div className="row justify-content-around">
+      <div className="row">
         {videos &&
           videos.map((video) => {
             if (video.id.videoId && video.snippet.thumbnails) {
               return (
                 <div
-                  className="col-md-3 py-4"
+                  className="col-md-3"
                   onClick={() => handleVideoClick(video.id.videoId)}
                   key={video.etag}
                 >
